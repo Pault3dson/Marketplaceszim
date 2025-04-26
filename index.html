@@ -1,191 +1,375 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketplaceZim | Safe Online Transactions in Zimbabwe</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>MarketplaceZim</h1>
-                <!-- Replace with an image logo later: <img src="logo.png" alt="MarketplaceZim Logo"> -->
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#listings">Listings</a></li>
-                    <li><a href="#profiles">Profiles</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="#profiles" class="cta-button">Join Now</a>
-        </div>
-    </header>
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Welcome to MarketplaceZim</h2>
-                <p>Your trusted platform for safe online transactions in Zimbabwe. Buy, sell, and connect with confidence.</p>
-                <div class="hero-features">
-                    <div class="feature">
-                        <img src="safety-icon.png" alt="Safety Icon">
-                        <p>Verified Users</p>
-                    </div>
-                    <div class="feature">
-                        <img src="market-icon.png" alt="Market Icon">
-                        <p>Diverse Listings</p>
-                    </div>
-                    <div class="feature">
-                        <img src="support-icon.png" alt="Support Icon">
-                        <p>24/7 Support</p>
-                    </div>
-                </div>
-                <a href="#listings" class="cta-button">Explore Listings</a>
-            </div>
-        </section>
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
 
-        <section id="listings">
-            <h2>Featured Listings</h2>
-            <p>Discover a range of services and products from trusted sellers across Zimbabwe.</p>
-            <div class="listings-container">
-                <div class="listing-card">
-                    <img src="farm-budget.jpg" alt="Farm Budget">
-                    <h3>Farm Budgets</h3>
-                    <p>Detailed financial plans for your farm, including cost analysis and profit forecasting.</p>
-                    <p class="price">$25 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="potato-farming.jpg" alt="Potato Farming">
-                    <h3>Potato Farming Consultation</h3>
-                    <p>Best practices for potato farming, from planting to market strategies.</p>
-                    <p class="price">$10 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="lessons.jpg" alt="Economic Lessons">
-                    <h3>Economic Lessons: College</h3>
-                    <p>In-depth lessons for college students in Agriculture Economics.</p>
-                    <p class="price">$40 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="thesis.jpg" alt="Thesis Consultation">
-                    <h3>Thesis Consultation</h3>
-                    <p>Expert guidance for your Agriculture Economics thesis.</p>
-                    <p class="price">$60 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="livestock.jpg" alt="Livestock Management">
-                    <h3>Livestock Management Strategies</h3>
-                    <p>Optimize your livestock operations for sustainability.</p>
-                    <p class="price">$30 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-                <div class="listing-card">
-                    <img src="agribusiness.jpg" alt="Agribusiness Analysis">
-                    <h3>Agribusiness Market Analysis</h3>
-                    <p>Understand market trends to grow your agribusiness.</p>
-                    <p class="price">$50 per session</p>
-                    <a href="#contact" class="listing-button">Contact Seller</a>
-                </div>
-            </div>
-        </section>
+/* Header styling */
+header {
+    background-color: #006400; /* Dark green (Zimbabwe flag) */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        <section id="profiles">
-            <h2>Join MarketplaceZim</h2>
-            <p>Create a profile and start listing your products or services today!</p>
-            <div class="profile-form">
-                <h3>Create Your Profile</h3>
-                <form id="profileForm">
-                    <label for="userName">Full Name:</label>
-                    <input type="text" id="userName" placeholder="Enter your name" required>
-                    
-                    <label for="userEmail">Email:</label>
-                    <input type="email" id="userEmail" placeholder="Enter your email" required>
-                    
-                    <label for="userPhone">Phone Number:</label>
-                    <input type="tel" id="userPhone" placeholder="Enter your phone number" required>
-                    
-                    <button type="submit">Create Profile</button>
-                </form>
-            </div>
-            <div class="listing-form">
-                <h3>Add a Listing</h3>
-                <form id="listingForm">
-                    <label for="listingTitle">Listing Title:</label>
-                    <input type="text" id="listingTitle" placeholder="e.g., Maize Farming Consultation" required>
-                    
-                    <label for="listingDescription">Description:</label>
-                    <textarea id="listingDescription" placeholder="Describe your product or service" required></textarea>
-                    
-                    <label for="listingPrice">Price (USD):</label>
-                    <input type="number" id="listingPrice" placeholder="e.g., 20" required>
-                    
-                    <button type="submit">Add Listing</button>
-                </form>
-            </div>
-            <div id="userListings">
-                <h3>Your Listings</h3>
-                <ul id="listingsContainer"></ul>
-            </div>
-        </section>
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        <section id="blog">
-            <h2>Our Mission</h2>
-            <article>
-                <h3>Creating a Safe Space for Online Transactions in Zimbabwe</h3>
-                <p>Posted on April 26, 2025 by Tatenda Chipara</p>
-                <p>At MarketplaceZim, our mission is to provide a secure and reliable platform for Zimbabweans to conduct online business with confidence. In a digital age where online transactions are becoming the norm, safety is paramount. We understand the challenges faced by buyers and sellers in Zimbabwe, from trust issues to payment security.</p>
-                <p>Our goal is to bridge that gap by offering a marketplace where users are verified, transactions are transparent, and support is always available. Whether you're a farmer selling agricultural services, a student seeking educational resources, or a small business owner looking to expand, MarketplaceZim ensures you can connect with others safely.</p>
-                <p>We’re committed to fostering a community where everyone can thrive, supporting Zimbabwe’s digital economy as we grow together. Join us today and experience the difference of a marketplace built on trust.</p>
-            </article>
-        </section>
+.logo h1 {
+    font-size: 1.5rem;
+}
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>I’m Tatenda Chipara, a degree holder in Agriculture Economics and Rural Development, passionate about empowering Zimbabweans through safe online marketplaces. MarketplaceZim is designed to support local businesses, farmers, and students by providing a platform for secure transactions.</p>
-            <p>We proudly align with Zimbabwe’s Vision 2030, contributing to the nation’s goal of becoming an upper-middle-income economy by fostering digital innovation, supporting rural development, and promoting economic growth through safe and accessible online trade.</p>
-        </section>
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or ready to join MarketplaceZim? Get in touch!</p>
-            <p>Email: <a href="mailto:pault3dson@gmail.com">pault3dson@gmail.com</a></p>
-            <p>Phone: <a href="tel:+263717308762">+263717308762</a></p>
-        </section>
-    </main>
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    <footer>
-        <div class="footer-container">
-            <p>© 2025 MarketplaceZim. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#listings">Listings</a></li>
-                    <li><a href="#profiles">Profiles</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-links">
-                <p>Follow us: 
-                    <a href="#">Facebook</a> | 
-                    <a href="#">Twitter</a> | 
-                    <a href="#">LinkedIn</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+nav ul li a:hover {
+    color: #ffeb3b; /* Yellow (Zimbabwe flag) */
+}
 
-    <script src="script.js"></script>
-</body>
-                        </html>
+.cta-button {
+    background-color: #ffeb3b;
+    color: #006400;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #fdd835;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #ffeb3b;
+}
+
+/* Listings section */
+#listings {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+#listings h2 {
+    text-align: center;
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+#listings > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.listings-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.listing-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+}
+
+.listing-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.listing-card h3 {
+    color: #006400;
+    margin: 1rem;
+}
+
+.listing-card p {
+    margin: 0 1rem 1rem;
+    color: #666;
+}
+
+.listing-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d32f2f; /* Red (Zimbabwe flag) */
+    margin: 0 1rem 1rem;
+}
+
+.listing-button {
+    display: block;
+    background-color: #006400;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.listing-button:hover {
+    background-color: #004d00;
+}
+
+/* Profiles section */
+#profiles {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff9c4; /* Light yellow (Zimbabwe flag) */
+    border-radius: 10px;
+    text-align: center;
+}
+
+#profiles h2 {
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+.profile-form, .listing-form {
+    margin: 2rem 0;
+}
+
+.profile-form h3, .listing-form h3 {
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+#profileForm, #listingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#profileForm label, #listingForm label {
+    font-weight: bold;
+    color: #333;
+}
+
+#profileForm input, #listingForm input, #listingForm textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#listingForm textarea {
+    height: 100px;
+}
+
+#profileForm button, #listingForm button {
+    background-color: #006400;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#profileForm button:hover, #listingForm button:hover {
+    background-color: #004d00;
+}
+
+#userListings {
+    margin-top: 2rem;
+}
+
+#userListings h3 {
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+#listingsContainer {
+    list-style: none;
+}
+
+#listingsContainer li {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog section */
+#blog {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff; /* White (Zimbabwe flag) */
+    border-radius: 10px;
+}
+
+#blog h2 {
+    color: #006400;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#blog article {
+    border-left: 4px solid #ffeb3b;
+    padding-left: 1rem;
+}
+
+#blog h3 {
+    color: #006400;
+    margin-bottom: 0.5rem;
+}
+
+#blog p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* About section */
+#about {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff9c4;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#about h2 {
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+/* Contact section */
+#contact {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff9c4;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #006400;
+    margin-bottom: 1rem;
+}
+
+#contact a {
+    color: #006400;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    background-color: #006400;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-container p {
+    margin-bottom: 1rem;
+}
+
+.footer-container nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: white;
+}
